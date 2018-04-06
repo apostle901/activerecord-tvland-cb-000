@@ -8,7 +8,7 @@ class Actor < ActiveRecord::Base
 
   def list_roles
     holder = []
-    self.characters.find_each {|char| holder.push(char.name)}
+    self.characters.find_each {|char| holder.push("#{char.name} - #{char.show.name}"}
     holder
   end
 end
